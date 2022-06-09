@@ -1,13 +1,35 @@
 <?php
-// include de arquivos
-include_once './_includes/_head.php';
-include_once './_includes/_header.php';
+// include do footer
+include_once './includes/_dados.php';
+include_once './includes/_head.php';
+include_once './includes/_header.php';
+
+$id = $_GET['id'];
+
+##echo '<pre>'; 
+#print_r($dados);
+#echo '</pre>';
+
 ?>
 
-home
+<h1>Home</h1>
 
 <?php
-//include
-include_once './_includes/_footer.php';
 
+for ($i=0; $i < 10; $i++) { 
+    echo $i. '<br>';
+    echo $produtos [$i] ['nome'];
+    echo $produtos [$i] ['preco'];
+    echo '<img src="./content/'.$produtos [$i] ['imagem'].'">';
+    echo '<hr>';
+}
+
+
+
+?>
+<!-- <img src="<php echo $produtos[$id]['imagem'];?>"> -->
+
+<?php
+// include do footer
+include_once './includes/_footer.php';
 ?>
