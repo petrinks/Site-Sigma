@@ -4,30 +4,37 @@ include_once './includes/_dados.php';
 include_once './includes/_head.php';
 include_once './includes/_header.php';
 
-$id = $_GET['id'];
-
+    
 ##echo '<pre>'; 
 #print_r($dados);
 #echo '</pre>';
 
 ?>
 
-<h1>Home</h1>
-
-<?php
-
-for ($i=0; $i < 10; $i++) { 
-    echo $i. '<br>';
-    echo $produtos [$i] ['nome'];
-    echo $produtos [$i] ['preco'];
-    echo '<img src="./content/'.$produtos [$i] ['imagem'].'">';
-    echo '<hr>';
-}
 
 
+<div class="container">
 
-?>
-<!-- <img src="<php echo $produtos[$id]['imagem'];?>"> -->
+        <div class="row mt-5">
+            
+            <?php
+            for ($i=0; $i < 3; $i++) {
+
+            ?>
+            <div class="card m-3" style="width: 21rem;">
+                <img class="card-img-top" src="./content/<?php echo $produtos[$i]['imagem']; ?>" alt="Card image cap" height=250>
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $produtos[$i]['nome']; ?></h5>
+                    <p class="card-text"><?php echo $produtos[$i]['descricao'];?> </p>
+                    <p class="card-text">R$<?php echo $produtos[$i]['preco'];?> </p>
+                    <a href="produto-detalhe.php?id=<?php echo $i; ?>" class="btn btn-primary">Ver Produto</a>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+</div>
+
+
 
 <?php
 // include do footer
