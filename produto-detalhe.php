@@ -19,12 +19,13 @@ $id = $_GET['id'];
             <h4>R$ <?php  echo $produtos[$id]['preco']; ?></h4>
         </div>
     </div>
-</div>
-
-
+</div>  
+  a
 
 
 <?php
+
 // include do footer
+
 include_once './includes/_footer.php';
-?>
+?>    

@@ -32,7 +32,20 @@ $produtos = array(
     26 => array('nome'=>'cria chique','preco'=> '5700.00','descricao'=>' muita grana ','imagem'=>'crialux.jpg'), 
     27 => array('nome'=>'cria apaionado','preco'=> '20.000.000.00','descricao'=>' mano ela é diferente ','imagem'=>'faveladoapa.jpg'), 
     28 => array('nome'=>'cria do baile','preco'=> '3800.00','descricao'=>' muita bebida para esquecer ela ','imagem'=>'criar.jpg'), 
-    29 => array('nome'=>'criacionismo','preco'=> '9.000.0000.0000.0000.000.00000','descricao'=>' teoria que os crias criaram o mundo','imagem'=>'criacionismo.jpg'), 
+    29 => array('nome'=>'criacionismo','preco'=> '9.000','descricao'=>' teoria que os crias criaram o mundo','imagem'=>'criacionismo.jpg'), 
 
-)
+);
+
+$sqlStr = "";
+
+foreach ($produtos as $key => $value) {
+    $nome = $value['nome'];
+    $descricao = $value['descricao'];
+    $imagem = $value['imagem'];
+    $preco = $value ['preco'];
+    $sqlStr = "$sqlStr<br>INSERT INTO `produtos` (`Nome`, `Descricao`, `Imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES ('$nome', '$descricao', '$imagem', '$preco', 1, 1); ";
+}
+
+print($sqlStr);
+
 ?>
