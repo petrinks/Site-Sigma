@@ -19,27 +19,22 @@ include_once './includes/_header.php';
             
             <?php
 
-            $sql = "select *  FROM categorias WHERE ativo = 1";
+            $sql = "select *  FROM produtos WHERE ativo = 1";
 
             $exec = mysqli_query($conn, $sql);
 
             $numProdutos = mysqli_num_rows($exec);
             
-            echo '<pre>';
             while ($dados = mysqli_fetch_assoc($exec)) {
-                echo '<h1>' .$dados['Nome'].'<h1>';
-            }
-
-            for ($i=0; $i < 3; $i++) {
 
             ?>
             <div class="card m-4" style="width: 19rem; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3   );">
-                <img class="card-img-top" src="./content/<?php echo $produtos[$i]['imagem']; ?>" alt="Card image cap" height=250>
+                <img class="card-img-top" src="./content/<?php echo $dados['Imagem']; ?>" alt="Card image cap" height=250>
                 <div class="card-body">
-                    <h5 class="card-title"><?php echo $produtos[$i]['nome']; ?></h5>
-                    <p class="card-text"><?php echo $produtos[$i]['descricao'];?> </p>
-                    <p class="card-text">R$<?php echo $produtos[$i]['preco'];?> </p>
-                    <a href="produto-detalhe.php?id=<?php echo $i; ?>" class="btn btn-primary">Ver Produto</a>
+                    <h5 class="card-title"><?php echo $dados['Nome']; ?></h5>
+                    <p class="card-text"><?php echo $dados['Descricao'];?> </p>
+                    <p class="card-text">R$<?php echo $dados['Preco'];?> </p>
+                    <a href="produto-detalhe.php?id=<?php echo $dados['ProdutoID']; ?>" class="btn btn-primary">Ver Produto</a>
                 </div>
             </div>
             <?php } ?>
