@@ -25,7 +25,7 @@ include_once './includes/_header.php';
 
             $numProdutos = mysqli_num_rows($exec);
             
-            while ($dados = mysqli_fetch_assoc($exec)) {
+                while ($dados = mysqli_fetch_assoc($exec)) {
 
             ?>
             <div class="card m-4" style="width: 19rem; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3   );">
